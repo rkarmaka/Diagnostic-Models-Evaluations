@@ -1,7 +1,7 @@
 
 # Evaluation of Diagnostic Models
 
-Welcome to the second assignment of course 1. In this assignment, we will be working with the results of the X-ray classification model we developed in the previous assignment. In order to make the data processing a bit more manageable, we will be working with a subset of our training, and validation datasets. We will also use our manually labeled test dataset of 420 X-rays.  
+In this project, we will be working with the results of the X-ray classification model we developed in the previous assignment. In order to make the data processing a bit more manageable, we will be working with a subset of our training, and validation datasets. We will also use our manually labeled test dataset of 420 X-rays.  
 
 As a reminder, our dataset contains X-rays from 14 different conditions diagnosable from an X-ray. We'll evaluate our performance on each of these classes using the classification metrics we learned in lecture.
 
@@ -383,12 +383,9 @@ def false_positives(y, pred, th=0.5):
     # get thresholded predictions
     thresholded_preds = pred >= th
     
-    ### START CODE HERE (REPLACE INSTANCES OF 'None' with your code) ###
-
     # compute FP
     FP = np.sum((y == 0) & (thresholded_preds == 1))
     
-    ### END CODE HERE ###
     
     return FP
 
@@ -444,11 +441,6 @@ FP: {false_positives(y_test, preds_test, threshold)}
 FN: {false_negatives(y_test, preds_test, threshold)}
 """)
 
-print("Expected results")
-print(f"There are {sum(df['category'] == 'TP')} TP")
-print(f"There are {sum(df['category'] == 'TN')} TN")
-print(f"There are {sum(df['category'] == 'FP')} FP")
-print(f"There are {sum(df['category'] == 'FN')} FN")
 ```
 
 
